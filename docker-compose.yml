@@ -1,0 +1,15 @@
+mysql:
+  image: mysql:latest 
+  environment:
+    - MYSQL_ROOT_PASSWORD=admin
+    - MYSQL_DATABASE=laravel_test_1
+    - MYSQL_USER=zhouhao
+    - MYSQL_PASSWORD=zhouhao123
+  volumes:
+    - ./volume/mysqldb/datadir:/var/lib/mysql
+
+redis:
+  image: redis:latest
+  volumes:
+    - ./volume/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    - ./volume/redis/data:/data
